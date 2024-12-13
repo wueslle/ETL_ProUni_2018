@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS curso_prouni (
   - Realizar queries estratégicas
 
 ## 📊 Estrutura do Banco de Dados
-### Tabelas Principais
+### Tabela Principal
 **curso_prouni**
 
 | Coluna                   | Tipo     | Descrição                                |
@@ -88,10 +88,10 @@ CREATE TABLE IF NOT EXISTS curso_prouni (
 | Curso                    | VARCHAR  | Nome do curso                            |
 | TURNO                    | VARCHAR  | Turno do curso (ex.: manhã, tarde, noite) |
 | MENSALIDADE              | FLOAT    | Valor da mensalidade do curso            |
-| BOLSA_INTEGRAL_AMPLA     | FLOAT    | Porcentagem de bolsas integrais ampla concorrência |
-| NOTA_INTEGRAL_AMPLA      | FLOAT    | Nota mínima para bolsa integral ampla    |
-| BOLSA_INTEGRAL_COTA      | FLOAT    | Porcentagem de bolsas integrais para cotas |
-| NOTA_INTEGRAL_COTA       | FLOAT    | Nota mínima para bolsa integral de cotas |
+| BOLSA_INTEGRAL_AMPLA     | FLOAT    | Quantidade de bolsas integrais ampla concorrência |
+| NOTA_INTEGRAL_AMPLA      | FLOAT    | Nota de corte para bolsa integral ampla    |
+| BOLSA_INTEGRAL_COTA      | FLOAT    | Quantidade de bolsas integrais para cotas |
+| NOTA_INTEGRAL_COTA       | FLOAT    | Nota de corte para bolsa integral de cotas |
 
 ## 📈 Explicação do Código
 ### Função `processar_paginas`
