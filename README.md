@@ -56,11 +56,17 @@ database_config = {
 ### Configuração do Banco de Dados
 - Crie as tabelas necessárias executando as queries DDL do notebook ou utilizando scripts SQL:
 ```sql
--- Exemplo de criação de tabela
-CREATE TABLE exemplo (
-    id SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL
-);
+CREATE TABLE IF NOT EXISTS curso_prouni (
+            UF VARCHAR,
+            Cidade VARCHAR,
+            Universidade VARCHAR,
+            Curso VARCHAR,
+            TURNO VARCHAR,
+            MENSALIDADE FLOAT,
+            BOLSA_INTEGRAL_AMPLA FLOAT,
+            NOTA_INTEGRAL_AMPLA FLOAT,
+            BOLSA_INTEGRAL_COTA FLOAT,
+            NOTA_INTEGRAL_COTA FLOAT
 ```
 
 ### Execução
@@ -69,12 +75,6 @@ CREATE TABLE exemplo (
   - Criar as tabelas no banco de dados
   - Inserir os dados extraídos no banco
   - Realizar queries estratégicas
-
-ou utilize scripts Python/Shell para operações automatizadas:
-```bash
-python src/extrair_dados.py
-python src/analises.py
-```
 
 ## 📊 Estrutura do Banco de Dados
 ### Tabelas Principais
