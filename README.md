@@ -191,7 +191,7 @@ FROM public.curso_prouni
 WHERE curso = 'Medicina'
 GROUP BY curso, uf
 ```
-
+<img width="233" alt="image" src="https://github.com/user-attachments/assets/4681a951-ae1d-427b-9d32-0f420c63e398" />
 
 Com o intuito de ajudar o estudante que tem a possibilidade de se mudar para os outros estados, foi organizado uma planilha de médias das notas por UF, assim, o aluno pode ter uma ideia de onde focar e quanto precisa tirar no seu estado e/ou nos UF proximos da sua localização.
 
@@ -204,7 +204,9 @@ GROUP BY curso,uf
 HAVING AVG(mensalidade) IS NOT NULL
 ORDER BY media_mensalidade DESC;
 ```
-Para alunos que também tem a possibilidade de pagar, disponibilizamos uma tabela com a média de mensalidade por UF.
+<img width="173" alt="image" src="https://github.com/user-attachments/assets/2529c9b0-a240-4b13-8b44-91b8e9672658" />
+
+Para alunos que também tem a possibilidade de pagar, ou que apenas querem observar as mensalidades que vão deixar de pagar, disponibilizamos uma tabela com a média de mensalidade por UF.
 
 ## 📝 Notas
 - Os dados da API não mudam, uma vez que são dados de 2018
