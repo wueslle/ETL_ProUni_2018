@@ -164,7 +164,9 @@ Insere os dados recebidos no banco de dados usando bulk insert:
 3. Usa `psycopg2.extras.execute_values` para executar um comando SQL de inserção.
 
 ## 📈 Análises Implementadas
-### 1. Top 5 cursos de Medicina com maiores notas de corte para vagas de concorrência ampla
+### 📖 Contexto
+O objetivo do projeto é coletar e analisar os dados dentro de um contexto real. Dentro dessa ideia, fomos contratos por uma rede de cursinho focado em medicina que quer dar mais atenção aos alunos que tem o ProUni como opção. Desta forma, as querys foram pensadas para que a instituição possa oferecer uma orientação para os alunos que buscam essa forma de entrada na universidade.
+#### 1. Top 5 cursos de Medicina com menores notas de corte para vagas de concorrência ampla
 ```sql
 SELECT curso, uf, universidade,
        nota_integral_ampla,
@@ -175,7 +177,10 @@ FROM public.curso_prouni
 WHERE curso = 'Medicina'
 ORDER BY nota_integral_ampla;
 ```
-### 2. Média de nota de corte para vagas de concorrência ampla e cotas do curso de Medicina por estado
+<img width="398" alt="image" src="https://github.com/user-attachments/assets/898c93df-ea1b-4f10-a69e-ef34d94af88f" />
+
+
+#### 2. Média de nota de corte para vagas de concorrência ampla e cotas do curso de Medicina por estado
 ```sql
 SELECT curso, uf,
        ROUND(AVG(nota_integral_ampla)::numeric, 2) AS media_integral_ampla,
@@ -184,7 +189,7 @@ FROM public.curso_prouni
 WHERE curso = 'Medicina'
 GROUP BY curso, uf
 ```
-### 3. Média de mensalidade do curso de Medicina por estado
+#### 3. Média de mensalidade do curso de Medicina por estado
 ```sql
 SELECT curso, ROUND(AVG(mensalidade)::numeric, 2) AS media_mensalidade ,uf, COUNT(*)
 FROM public.curso_prouni
