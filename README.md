@@ -178,7 +178,8 @@ WHERE curso = 'Medicina'
 ORDER BY nota_integral_ampla;
 ```
 <img width="398" alt="image" src="https://github.com/user-attachments/assets/898c93df-ea1b-4f10-a69e-ef34d94af88f" />
-
+Ao analisar o top 10 menores notas, percebemos que, diferente de federais onde as notas costumam ir de 760 para mais de 800,
+o ProUni costuma ter notas mais acéssiveis e alcancaveis, tendo notas a partir de 732.70. Isso faz o ProUni ser uma boa opção de foco para o aluno interessado em cursar medicina, mas não está disposto a permanecer muitos anos dentro do cursinho.
 
 #### 2. Média de nota de corte para vagas de concorrência ampla e cotas do curso de Medicina por estado
 ```sql
@@ -189,6 +190,8 @@ FROM public.curso_prouni
 WHERE curso = 'Medicina'
 GROUP BY curso, uf
 ```
+Com o intuito de ajudar o estudante que tem a possibilidade de se mudar para os outros estados, foi organizado uma planilha de médias das notas por UF, assim, o aluno pode ter uma ideia de onde focar e quanto precisa tirar no seu estado e/ou nos UF proximos da sua localização.
+
 #### 3. Média de mensalidade do curso de Medicina por estado
 ```sql
 SELECT curso, ROUND(AVG(mensalidade)::numeric, 2) AS media_mensalidade ,uf, COUNT(*)
@@ -198,6 +201,7 @@ GROUP BY curso,uf
 HAVING AVG(mensalidade) IS NOT NULL
 ORDER BY media_mensalidade DESC;
 ```
+Para alunos que também tem a possibilidade de pagar, disponibilizamos uma tabela com a média de mensalidade por UF.
 
 ## 📝 Notas
 - Os dados da API não mudam, uma vez que são dados de 2018
