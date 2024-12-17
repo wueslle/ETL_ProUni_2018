@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS curso_prouni (
             BOLSA_INTEGRAL_AMPLA FLOAT,
             NOTA_INTEGRAL_AMPLA FLOAT,
             BOLSA_INTEGRAL_COTA FLOAT,
-            NOTA_INTEGRAL_COTA FLOAT
+            NOTA_INTEGRAL_COTA FLOAT )
 ```
 
 ### Execução
