@@ -179,7 +179,7 @@ ORDER BY nota_integral_ampla;
 ```
 <img width="398" alt="image" src="https://github.com/user-attachments/assets/898c93df-ea1b-4f10-a69e-ef34d94af88f" />
 
-Ao analisar o top 10 menores notas, percebemos que, diferente de federais onde as notas costumam ir de 760 para mais de 800,
+Ao analisar o top 5 menores notas, percebemos que, diferente de federais onde as notas costumam ir de 760 para mais de 800,
 o ProUni costuma ter notas mais acéssiveis e alcancaveis, tendo notas a partir de 732.70. Isso faz o ProUni ser uma boa opção de foco para o aluno interessado em cursar medicina, mas não está disposto a permanecer muitos anos dentro do cursinho.
 
 #### 2. Média de nota de corte para vagas de concorrência ampla e cotas do curso de Medicina por estado
