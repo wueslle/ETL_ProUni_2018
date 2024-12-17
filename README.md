@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS curso_prouni (
 | Cidade                   | VARCHAR  | Cidade onde está localizada a universidade |
 | Universidade             | VARCHAR  | Nome da universidade                     |
 | Curso                    | VARCHAR  | Nome do curso                            |
-| TURNO                    | VARCHAR  | Turno do curso (ex.: manhã, tarde, noite) |
+| TURNO                    | VARCHAR  | Turno do curso (ex.: manhã, tarde, noite, à distância) |
 | MENSALIDADE              | FLOAT    | Valor da mensalidade do curso            |
 | BOLSA_INTEGRAL_AMPLA     | FLOAT    | Quantidade de bolsas integrais ampla concorrência |
 | NOTA_INTEGRAL_AMPLA      | FLOAT    | Nota de corte para bolsa integral ampla    |
@@ -165,7 +165,7 @@ Insere os dados recebidos no banco de dados usando bulk insert:
 
 ## 📈 Análises Implementadas
 ### 📖 Contexto
-O objetivo do projeto é coletar e analisar os dados dentro de um contexto real. Dentro dessa ideia, fomos contratos por uma rede de cursinho focado em medicina que quer dar mais atenção aos alunos que tem o ProUni como opção. Desta forma, as querys foram pensadas para que a instituição possa oferecer uma orientação para os alunos que buscam essa forma de entrada na universidade.
+O objetivo do projeto é coletar e analisar os dados dentro de um contexto real. Dentro dessa ideia, fomos contratados por uma rede de cursinho focado em medicina que quer dar mais atenção aos alunos que tem o ProUni como opção. Desta forma, as querys foram pensadas para que a instituição possa oferecer uma orientação para os alunos que buscam essa forma de entrada na universidade.
 #### 1. Top 5 cursos de Medicina com menores notas de corte para vagas de concorrência ampla
 ```sql
 SELECT curso, uf, universidade,
