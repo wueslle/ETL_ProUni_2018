@@ -176,6 +176,7 @@ SELECT curso, uf, universidade,
 FROM public.curso_prouni
 WHERE curso = 'Medicina'
 ORDER BY nota_integral_ampla;
+LIMIT 5
 ```
 <img width="398" alt="image" src="https://github.com/user-attachments/assets/898c93df-ea1b-4f10-a69e-ef34d94af88f" />
 
