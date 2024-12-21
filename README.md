@@ -167,6 +167,7 @@ Insere os dados recebidos no banco de dados usando bulk insert:
 ## 📝 Notas
 - Os dados da API não mudam, uma vez que são dados de 2018
 - Pelo volume grande de dados (41447 linhas) foi escolhido o método de bulk insert
+- o dashboard pode ser encontrado no link: [Análise dos cursos do prouni 2018](https://public.tableau.com/app/profile/wueslle.thibes8447/viz/Livro1_17347475273590/Painel1)
 
 
 
