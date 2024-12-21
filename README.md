@@ -163,61 +163,10 @@ Insere os dados recebidos no banco de dados usando bulk insert:
 2. Percorre os dados e cria uma lista de tuplas formatados para inserção na tabela `curso_prouni`.
 3. Usa `psycopg2.extras.execute_values` para executar um comando SQL de inserção.
 
-## 📈 Análises Implementadas
-### 📖 Contexto
-O objetivo do projeto é coletar e analisar os dados dentro de um contexto real. Dentro dessa ideia, fomos contratados por uma rede de cursinho focado em medicina que quer dar mais atenção aos alunos que tem o ProUni como opção. Desta forma, as querys foram pensadas para que a instituição possa oferecer uma orientação para os alunos que buscam essa forma de entrada na universidade.
-#### 1. Top 5 cursos de Medicina com menores notas de corte para vagas de concorrência ampla
-```sql
-SELECT curso, uf, universidade,
-       nota_integral_ampla,
-       nota_integral_cota,
-       bolsa_integral_ampla,
-       bolsa_integral_cota
-FROM public.curso_prouni
-WHERE curso = 'Medicina'
-ORDER BY nota_integral_ampla;
-LIMIT 5
-```
-<img width="398" alt="image" src="https://github.com/user-attachments/assets/898c93df-ea1b-4f10-a69e-ef34d94af88f" />
-
-Ao analisar o top 5 menores notas, percebemos que, diferente de federais onde as notas costumam ir de 760 para mais de 800,
-o ProUni costuma ter notas mais acéssiveis e alcancaveis, tendo notas a partir de 732.70. Isso faz o ProUni ser uma boa opção de foco para o aluno interessado em cursar medicina, mas não está disposto a permanecer muitos anos dentro do cursinho.
-
-#### 2. Média de nota de corte para vagas de concorrência ampla e cotas do curso de Medicina por estado
-```sql
-SELECT curso, uf,
-       ROUND(AVG(nota_integral_ampla)::numeric, 2) AS media_integral_ampla,
-       ROUND(AVG(nota_integral_cota)::numeric, 2) AS media_integral_cota
-FROM public.curso_prouni
-WHERE curso = 'Medicina'
-GROUP BY curso, uf
-```
-<img width="233" alt="image" src="https://github.com/user-attachments/assets/4681a951-ae1d-427b-9d32-0f420c63e398" />
-
-Com o intuito de ajudar o estudante que tem a possibilidade de se mudar para os outros estados, foi organizado uma planilha de médias das notas por UF, assim, o aluno pode ter uma ideia de onde focar e quanto precisa tirar no seu estado e/ou nos UF proximos da sua localização.
-
-#### 3. Média de mensalidade do curso de Medicina por estado
-```sql
-SELECT curso, ROUND(AVG(mensalidade)::numeric, 2) AS media_mensalidade ,uf, COUNT(*)
-FROM public.curso_prouni
-WHERE curso = 'Medicina'
-GROUP BY curso,uf
-HAVING AVG(mensalidade) IS NOT NULL
-ORDER BY media_mensalidade DESC;
-```
-<img width="173" alt="image" src="https://github.com/user-attachments/assets/2529c9b0-a240-4b13-8b44-91b8e9672658" />
-
-Para alunos que também tem a possibilidade de pagar, ou que apenas querem observar as mensalidades que vão deixar de pagar, disponibilizamos uma tabela com a média de mensalidade por UF.
 
 ## 📝 Notas
 - Os dados da API não mudam, uma vez que são dados de 2018
 - Pelo volume grande de dados (41447 linhas) foi escolhido o método de bulk insert
 
-## 👥 Autores
-Equipe do Projeto 1
-- Wueslle Thibes
-- Camila Miranda Marani
-- Desirê Bento Frankoski
-- Hyrum Spencer Olivera Fernandez
-- Larissa de Jesus Santos
+
 
