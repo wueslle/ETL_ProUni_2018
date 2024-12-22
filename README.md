@@ -27,11 +27,11 @@ pip install -r requirements.txt
 API_TOKEN=seu_token_aqui
 
 # Configuração do banco de dados
-DB_NAME=grupo_1
-DB_USER=grupo_1
-DB_PASSWORD=how_ebanx
-DB_HOST=how.c3gus406qdox.eu-north-1.rds.amazonaws.com
-DB_PORT=5432
+DB_NAME=nome_do_db
+DB_USER=usuario
+DB_PASSWORD=senha
+DB_HOST=endereço_do_host
+DB_PORT=porta
 ```
 3. No código, utilize a biblioteca `python-dotenv` para carregar as variáveis:
 ```python
